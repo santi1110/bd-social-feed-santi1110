@@ -1,6 +1,5 @@
 package com.bloomtech.socialfeed.models;
 
-import com.bloomtech.socialfeed.App;
 import com.bloomtech.socialfeed.observerpattern.OUserFeed;
 
 import java.util.ArrayList;
@@ -20,7 +19,9 @@ public class User {
         following = new ArrayList<>();
         userFeed = new OUserFeed(this);
     }
-
+    public boolean isFollowing(String usernameToCheck) {
+        return following.contains(usernameToCheck);
+    }
     public String getUsername() {
         return username;
     }
