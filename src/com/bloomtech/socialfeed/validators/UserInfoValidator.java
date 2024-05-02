@@ -7,15 +7,16 @@ import com.bloomtech.socialfeed.models.User;
 public class UserInfoValidator implements Validator {
 
     private boolean isValidUsername(String username) {
+        return username.matches("[A-Z][a-zA-Z0-9]{3,}");
         //TODO: validate username begins with an uppercase letter, is at least 4 characters long, and only contains
         //letters, numbers, and underscores
-        return true;
     }
 
     private boolean isValidPassword(String password) {
+        return password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d!@#$%^&*]{8,}$");
+
         //TODO: validate password contains at least 8 characters, an uppercase, and a lowercase letter.
         //valid symbols include: !@#$%^&*
-        return true;
     }
 
     @Override
