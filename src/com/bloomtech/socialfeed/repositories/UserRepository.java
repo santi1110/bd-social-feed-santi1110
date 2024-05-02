@@ -5,9 +5,7 @@ import com.bloomtech.socialfeed.validators.UserInfoValidator;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -26,9 +24,21 @@ public class UserRepository {
 
     public List<User> getAllUsers() {
         List<User> allUsers = new ArrayList<>();
+        Gson gson = new Gson();
+
+        try (Reader reader = new FileReader(USER_DATA_PATH)) {
+            User[] users = gson.fromJson(reader, User[].class);
+            if (users != null) {
+                for (User user : users) {
+                    allUsers.add(user);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return allUsers;
         //TODO: return parsed list of Users from UserData.json
 
-        return allUsers;
     }
 
     public Optional<User> findByUsername(String username) {
@@ -49,6 +59,11 @@ public class UserRepository {
             throw new RuntimeException("User with name: " + user.getUsername() + " already exists!");
         }
         allUsers.add(user);
+        try (Writer writer = new FileWriter(USER_DATA_PATH)) {
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            gson.toJson(allUsers, writer);
+        } catch (IOException e) {
+            e.printStackTrace();
         //TODO: Write allUsers to UserData.json
     }
-}
+}}
