@@ -30,6 +30,7 @@ public class SourceFeed implements Source {
         Post post = new Post(user.getUsername(), LocalDateTime.now().toString(), body);
 
         // Add the post to the repository
+        posts.add(post);
         postRepository.addPost(post);
 
         // Notify all attached observers about the new post
