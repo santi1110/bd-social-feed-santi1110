@@ -1,17 +1,70 @@
 [
   {
     "username": "Leader",
-    "postedon": "2024-05-02T16:38:52.248591",
+    "postedon": {
+      "date": {
+        "year": 2024,
+        "month": 5,
+        "day": 3
+      },
+      "time": {
+        "hour": 10,
+        "minute": 46,
+        "second": 36,
+        "nano": 631254000
+      }
+    },
     "body": "Welcome everyone!"
   },
   {
     "username": "Follower",
-    "postedon": "2024-05-02T16:38:52.250061",
+    "postedon": {
+      "date": {
+        "year": 2024,
+        "month": 5,
+        "day": 3
+      },
+      "time": {
+        "hour": 10,
+        "minute": 46,
+        "second": 36,
+        "nano": 648983800
+      }
+    },
     "body": "I am so excited to hear everything leader has to say!"
   },
   {
     "username": "Loner",
-    "postedon": "2024-05-02T16:38:52.252342",
+    "postedon": {
+      "date": {
+        "year": 2024,
+        "month": 5,
+        "day": 3
+      },
+      "time": {
+        "hour": 10,
+        "minute": 46,
+        "second": 36,
+        "nano": 653012600
+      }
+    },
     "body": "I am not interested in what anyone has to say but myself"
+  },
+  {
+    "username": "Testuser",
+    "postedon": {
+      "date": {
+        "year": 2024,
+        "month": 5,
+        "day": 3
+      },
+      "time": {
+        "hour": 10,
+        "minute": 46,
+        "second": 36,
+        "nano": 658195100
+      }
+    },
+    "body": "test post"
   }
 ]
